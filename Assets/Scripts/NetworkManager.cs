@@ -105,7 +105,7 @@ public class NetworkManager : MonoBehaviour
             try
             {
                 server.Send(data, data.Length, remoteEndPoint); 
-                UnityEngine.Debug.Log("successfully sent");
+                //UnityEngine.Debug.Log("successfully sent");
             }
             catch (Exception ex)
             {
