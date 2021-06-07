@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="RedLines" size="0.050800 0.050800" />
+    <ImageTarget name="BlueBall" size="0.050800 0.050800" />
+    <ImageTarget name="garbledigook" size="0.031750 0.031750" />
+    <ImageTarget name="BigOleHospital_Blue" size="0.127000 0.127000" />
+    <ImageTarget name="Camera_1" size="0.052832 0.052832" />
+    <ImageTarget name="Ugjennomsiktig" size="0.052832 0.052832" />
+    <ImageTarget name="Gjennomlysende" size="0.052832 0.052832" />
+    <ImageTarget name="Gourney" size="0.052832 0.052832" />
+    <ImageTarget name="BigOleHospital" size="0.127000 0.127000" />
+  </Tracking>
+</QCARConfig>

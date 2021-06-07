@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="QCAR_Dataset_config.xsd">
+  <TargetSet version="5.0" toolVersion="4.2.0">
+    <ObjectTarget bbox="0.0000 0.0000 0.0000 0.1425 0.0950 0.0950" captureAppVersion="6.5.0" lastSaved="2019-01-07T00:27:41Z" name="thereAREFOURLIGHTS" targetId="d3ac3fa6d8124ca48d11c0c129276014" version="12.0" />
+    <ObjectTarget bbox="0.0000 0.0000 0.0000 0.1425 0.0950 0.0950" captureAppVersion="6.5.0" lastSaved="2019-01-06T23:57:01Z" name="bot5Lights" targetId="8e6145c145a7432888693f6ebb4f3a62" version="12.0" />
+  </TargetSet>
+</QCARInfo>
