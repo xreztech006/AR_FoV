@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AltFoV.unity
+    path: Assets/Scenes/HospitalAR.unity
     guid: e48da31bb518104499a5ef868cac3f7c
   - enabled: 0
     path: Assets/Scenes/Menu.unity
@@ -15,12 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/ResizeFoV.unity
     guid: 221848e174578504cb51ced0d5e9ed83
   - enabled: 0
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/PreHannah-STAMP.unity
     guid: f214b6d09102e96438b1d7cb263e63c0
   - enabled: 0
-    path: Assets/Scenes/ArResearchSaving.unity
+    path: Assets/Scenes/PreHannah_WaldoScene_STAMP.unity
     guid: 975890d59fd4ddc4ba3129b2d6d84e99
   - enabled: 0
-    path: Assets/Scenes/HospitalScene.unity
+    path: Assets/Scenes/ImproperSize-STAMP.unity
     guid: 599f3f4c950bd2f4a88d0e0795482c97
   m_configObjects: {}

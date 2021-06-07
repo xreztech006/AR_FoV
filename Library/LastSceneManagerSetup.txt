@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/AltFoV.unity
+- path: Assets/Scenes/HospitalAR.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -38,7 +38,7 @@ ScriptsOnlyBuild:
     - DefaultInitializationErrorHandler
     - DefaultTrackableEventHandler
   sceneClasses:
-    Assets/Scenes/AltFoV.unity:
+    Assets/Scenes/HospitalAR.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -1446,7 +1446,7 @@ ScriptsOnlyBuild:
     className: laserConstriant
   - hash:
       serializedVersion: 2
-      Hash: b26afa03f12dc29bb7374822ae5b6def
+      Hash: c911fa6aa8f3396d36948e382fad4c5c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AROnlyCameraManager
@@ -2124,5 +2124,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
-  - Assets/Scenes/AltFoV.unity
-  playerPath: C:/Users/xreztech009/Documents/GitHub/AR_FoV/Builds/AR_Hospital.apk
+  - Assets/Scenes/HospitalAR.unity
+  playerPath: C:/Users/xreztech009/Desktop/Hospital_AR_L.apk
