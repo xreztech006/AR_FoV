@@ -36,7 +36,7 @@ public class fovChecker : MonoBehaviour
     {
 
         count = seen[0] + seen[1] + seen[2];
-        _text.text = "Count: " + count.ToString();
+        _text.text = "The robot is visible\nby " + count.ToString() + " cameras.";
         for (int i = 0; i < 4; i++)
         {
             _rings[i].enabled = i == count;

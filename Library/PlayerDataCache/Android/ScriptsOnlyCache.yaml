@@ -2,9 +2,6 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AROnlyCameraManager
-    - Camera1
-    - Camera2
-    - Camera3
     - CameraManger
     - LaserScan
     - Ring
@@ -660,16 +657,10 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: e8ad5bb97bacdc58baf90dc2af7494e1
+      Hash: d98f1314dc5fc151ca662a88ded43e99
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: canvasUtility
-  - hash:
-      serializedVersion: 2
-      Hash: 4961e25cb52c0407c3999028b9e1d085
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Camera1
   - hash:
       serializedVersion: 2
       Hash: 5f170942ee57c7a568f5bcfc7521adea
@@ -694,12 +685,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 4961e25cb52c0407c3999028b9e1d085
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Camera2
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1332,12 +1317,6 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 4961e25cb52c0407c3999028b9e1d085
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Camera3
-  - hash:
-      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1474,12 +1453,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshPro
-  - hash:
-      serializedVersion: 2
-      Hash: 47d4dbf829486b7c110d5e3ae6c6eda6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerCollider
   - hash:
       serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb

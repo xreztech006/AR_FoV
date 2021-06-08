@@ -58,16 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AROnlyCameraManager.cs" />
-    <Compile Include="Assets\Scripts\Camera1.cs" />
-    <Compile Include="Assets\Scripts\Camera2.cs" />
-    <Compile Include="Assets\Scripts\Camera3.cs" />
     <Compile Include="Assets\Scripts\CameraManger.cs" />
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\LaserScan.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\ModeSwitch.cs" />
     <Compile Include="Assets\Scripts\NetworkManager.cs" />
-    <Compile Include="Assets\Scripts\PlayerCollider.cs" />
     <Compile Include="Assets\Scripts\Ring.cs" />
     <Compile Include="Assets\Scripts\SizeChange.cs" />
     <Compile Include="Assets\Scripts\cameraCompassRose.cs" />

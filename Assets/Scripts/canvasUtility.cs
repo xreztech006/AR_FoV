@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class canvasUtility : MonoBehaviour
 {
     public GameObject[] hideItems;
+    public GameObject button;
     private Rect a, b, _cur;
     private Camera cam;
     public Text text;
     string _text, ls, fv;
-    public GameObject button;
     int _mask;
+    bool uiActive = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
         a = new Rect(0, 0, 1, 1);
         b = new Rect(0, 0, 1f, 0.5f);
         cam = Camera.main;
@@ -34,10 +34,10 @@ public class canvasUtility : MonoBehaviour
     }
     public void toggleUI()
     {
-        foreach(GameObject item in hideItems)
+        uiActive = !uiActive;
+        foreach (GameObject item in hideItems)
         {
-            item.SetActive(item.activeInHierarchy ? false : true);
-
+            item.SetActive(uiActive);
         }
     }
 
@@ -60,5 +60,6 @@ public class canvasUtility : MonoBehaviour
         toggleMode(fov? "fov" : "laserscan");
         button.SetActive(fov ? true : false);
         hideItems[3].SetActive(fov ? true : false);
+        hideItems[4].SetActive(fov ? true : false);
     }
 }

@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 77198313aecdc0247b289f4a06ba8d95
   - enabled: 0
-    path: Assets/Scenes/ResizeFoV.unity
-    guid: 221848e174578504cb51ced0d5e9ed83
-  - enabled: 0
     path: Assets/Scenes/PreHannah-STAMP.unity
     guid: f214b6d09102e96438b1d7cb263e63c0
   - enabled: 0
