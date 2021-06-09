@@ -63,9 +63,11 @@ public class LaserScan : MonoBehaviour
 		
 		float currangle = angle/2;
         float angleincrement = angle / (numberLines-1);
-		for (int i =0; i < numberLines; i++) {
+		var tlineRenderer = lines[0].GetComponent<LineRenderer>();
+		tlineRenderer.SetPositions(new Vector3[] { this.transform.position, new Vector3((transform.position - target.transform.position).x, 0, (transform.position - target.transform.position).z) * linedistance });
+		for (int i =1; i < numberLines; i++) {
 			var lineRenderer = lines[i].GetComponent<LineRenderer>();
-			Vector3 direction = Quaternion.Euler(0, -currangle, 0) * new Vector3((transform.position - target.transform.position).x, 0, (transform.position - target.transform.position).z);
+			Vector3 direction = Quaternion.Euler(0, -currangle+.01f, 0) * new Vector3((transform.position - target.transform.position).x, 0, (transform.position - target.transform.position).z);
 			Vector3 startsPunkt = this.transform.position; // new Vector3(transform.position.x-xoffset, transform.position.y - ydecrement, transform.position.z - zoffset); 
 			
 			RaycastHit hit;
