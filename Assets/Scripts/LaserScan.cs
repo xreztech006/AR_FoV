@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using UnityEngine.UI;
 
 public class LaserScan : MonoBehaviour
 {
@@ -12,28 +14,29 @@ public class LaserScan : MonoBehaviour
 	// distance to draw lines when they don't hit a wall
 	public float linedistance;
 	public GameObject target;
-	
+	public Slider count;
+	public Slider setAngle;
 	private int numberLines;
 	private float angle;
 	private string laserskey = "Lasers";
 	private string anglekey = "Angle";
 	private int defaultLasers = 15;
-	private float defaultAngle = 180.0f;
+	private float defaultAngle = 230.0f;
 	private GameObject[] lines;
-	bool lateStart = false;
-	
-	void Start() {
-		lateStart = true;
-		numberLines = PlayerPrefs.GetInt(laserskey, defaultLasers);
+	bool upCount, upAngle, lateStart = false;
+
+	void Start()
+	{
+		upCount = upAngle = lateStart = true;
+		numberLines =  PlayerPrefs.GetInt(laserskey, defaultLasers);
 		angle = PlayerPrefs.GetFloat(anglekey, defaultAngle);
-		
-		lines = new GameObject[numberLines];
-		for (int i =0; i < lines.Length; i++) {
+		lines = new GameObject[50];
+		for (int i = 0; i < lines.Length; i++)
+		{
 			lines[i] = Instantiate(linePrefab);
 			lines[i].transform.parent = this.transform;
 		}
 	}
-	
     void FixedUpdate()
     {
         if (lateStart)
@@ -41,8 +44,18 @@ public class LaserScan : MonoBehaviour
 			gameObject.transform.localRotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
 			lateStart = false;
         }
-        // Bit shift the index of the layer (8) to get a bit mask
-        int layerMask = 1 << LayerMask.NameToLayer("walls") ;
+		if (upAngle)
+		{
+			angle = setAngle.value;
+			upAngle = false;
+		}
+		if (upCount)
+		{
+			numberLines = (int)count.value;
+			upCount = false;
+		}
+		// Bit shift the index of the layer (8) to get a bit mask
+		int layerMask = 1 << LayerMask.NameToLayer("walls") ;
 
         // This would cast rays only against colliders in layer 8.
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
@@ -50,9 +63,9 @@ public class LaserScan : MonoBehaviour
 		
 		float currangle = angle/2;
         float angleincrement = angle / (numberLines-1);
-		for (int i =0; i < lines.Length; i++) {
+		for (int i =0; i < numberLines; i++) {
 			var lineRenderer = lines[i].GetComponent<LineRenderer>();
-			Vector3 direction = Quaternion.Euler(0, currangle - 90.002f, 0) * new Vector3((target.transform.position - transform.position).x, 0, (target.transform.position - transform.position).z);
+			Vector3 direction = Quaternion.Euler(0, -currangle, 0) * new Vector3((transform.position - target.transform.position).x, 0, (transform.position - target.transform.position).z);
 			Vector3 startsPunkt = this.transform.position; // new Vector3(transform.position.x-xoffset, transform.position.y - ydecrement, transform.position.z - zoffset); 
 			
 			RaycastHit hit;
@@ -89,5 +102,20 @@ public class LaserScan : MonoBehaviour
 			
 			currangle -= angleincrement;
 		}
+		for (int i = numberLines; i < 50; i++)
+		{
+			var lineRenderer = lines[i].GetComponent<LineRenderer>();
+			Vector3 startsPunkt = this.transform.position;
+			Vector3[] positions = new Vector3[] { startsPunkt, startsPunkt };
+			lineRenderer.SetPositions(positions);
+		}
     }
+	public void SetAngle()
+	{
+		upAngle = true;
+	}
+	public void setNum()
+	{
+		upCount = true;
+	}
 }

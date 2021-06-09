@@ -15,7 +15,7 @@ public class AROnlyCameraManager : MonoBehaviour
         foreach (Camera cam in cameras){
 			cam.targetTexture = null;
 		}
-		cam = _cam = cameras[0];
+		cam = _cam = cameras[1];
     }
 
     // Update is called once per frame

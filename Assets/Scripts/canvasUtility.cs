@@ -58,8 +58,10 @@ public class canvasUtility : MonoBehaviour
         text.text = fov ? fv : ls;
         _text = text.text;
         toggleMode(fov? "fov" : "laserscan");
-        button.SetActive(fov ? true : false);
+        //button.SetActive(fov ? true : false);
         hideItems[3].SetActive(fov ? true : false);
         hideItems[4].SetActive(fov ? true : false);
+        hideItems[5].SetActive(!fov ? true : false);
+        hideItems[6].SetActive(!fov ? true : false);
     }
 }
