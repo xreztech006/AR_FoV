@@ -62,7 +62,6 @@
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\LaserScan.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
-    <Compile Include="Assets\Scripts\ModeSwitch.cs" />
     <Compile Include="Assets\Scripts\NetworkManager.cs" />
     <Compile Include="Assets\Scripts\Ring.cs" />
     <Compile Include="Assets\Scripts\cameraCompassRose.cs" />

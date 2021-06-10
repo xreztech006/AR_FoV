@@ -62,12 +62,12 @@ public class LaserScan : MonoBehaviour
         //layerMask = ~layerMask;
 		
 		float currangle = angle/2;
-        float angleincrement = angle / (numberLines-1);
-		var tlineRenderer = lines[0].GetComponent<LineRenderer>();
-		tlineRenderer.SetPositions(new Vector3[] { this.transform.position, new Vector3((transform.position - target.transform.position).x, 0, (transform.position - target.transform.position).z) * linedistance });
-		for (int i =1; i < numberLines; i++) {
+        float angleincrement = angle / (numberLines);
+		//var tlineRenderer = lines[0].GetComponent<LineRenderer>();
+		//tlineRenderer.SetPositions(new Vector3[] { this.transform.position, new Vector3((transform.position - target.transform.position).x, 0, (transform.position - target.transform.position).z) * linedistance });
+		for (int i =0; i < numberLines; i++) {
 			var lineRenderer = lines[i].GetComponent<LineRenderer>();
-			Vector3 direction = Quaternion.Euler(0, -currangle+.01f, 0) * new Vector3((transform.position - target.transform.position).x, 0, (transform.position - target.transform.position).z);
+			Vector3 direction = Quaternion.Euler(0, -currangle+.0001f, 0) * new Vector3((transform.position - target.transform.position).x, 0, (transform.position - target.transform.position).z);
 			Vector3 startsPunkt = this.transform.position; // new Vector3(transform.position.x-xoffset, transform.position.y - ydecrement, transform.position.z - zoffset); 
 			
 			RaycastHit hit;
@@ -95,7 +95,7 @@ public class LaserScan : MonoBehaviour
 			}
 			else
 			{
-				Vector3[] positions = new Vector3[]{startsPunkt, direction*linedistance};
+				Vector3[] positions = new Vector3[]{startsPunkt, new Vector3 (direction.x * linedistance, this.transform.position.y, direction.z * linedistance) };
 				lineRenderer.SetPositions(positions);
 				
 				//Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);

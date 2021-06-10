@@ -17,8 +17,8 @@ public class canvasUtility : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        a = new Rect(0, 0, 1, 1);
-        b = new Rect(0, 0, 1f, 0.5f);
+        a = new Rect(0, 0, 1f, 1f);
+        b = new Rect(0.5f, 0, 1f, 1f);
         cam = Camera.main;
         _mask = cam.cullingMask;
         _cur = cam.rect = a;

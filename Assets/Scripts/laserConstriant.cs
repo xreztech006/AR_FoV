@@ -13,7 +13,7 @@ public class laserConstriant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, 0.01489996f, transform.localPosition.z);
+        transform.position = new Vector3(transform.position.x, 5.300132f, transform.position.z);
 
     }
 }
