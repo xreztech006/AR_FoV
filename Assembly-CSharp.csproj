@@ -64,12 +64,12 @@
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\NetworkManager.cs" />
     <Compile Include="Assets\Scripts\Ring.cs" />
+    <Compile Include="Assets\Scripts\anchorCastHandler.cs" />
     <Compile Include="Assets\Scripts\cameraCompassRose.cs" />
     <Compile Include="Assets\Scripts\cameraConstraint.cs" />
     <Compile Include="Assets\Scripts\cameraMoniter.cs" />
     <Compile Include="Assets\Scripts\canvasUtility.cs" />
     <Compile Include="Assets\Scripts\fovChecker.cs" />
-    <Compile Include="Assets\Scripts\laserConstriant.cs" />
     <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
     <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CreateSinShapedLineStrip.cs" />
     <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\ShotBehavior.cs" />
