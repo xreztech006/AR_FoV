@@ -5,8 +5,10 @@ using UnityEngine;
 public class anchorCastHandler : MonoBehaviour
 {
 	public GameObject vessel;
-    // Start is called before the first frame update
-    void Start()
+	public string layerName;
+	public float defaultHeight = 5.300132f;
+	// Start is called before the first frame update
+	void Start()
     {
         
     }
@@ -20,13 +22,13 @@ public class anchorCastHandler : MonoBehaviour
 
 		RaycastHit hit;
 		// Does the ray intersect any objects excluding the player layer
-		if (Physics.Raycast(startsPunkt, direction, out hit, Mathf.Infinity, LayerMask.NameToLayer("botAnchor")))
+		if (Physics.Raycast(startsPunkt, direction, out hit, Mathf.Infinity, LayerMask.NameToLayer(layerName)))
 		{
 
 			vessel.transform.position = hit.point;
 		}
 		else vessel.transform.position = new Vector3(this.transform.position.x,
-													5.300132f,
+													defaultHeight,
 													this.transform.position.z);
 		vessel.transform.rotation = this.transform.rotation;
 

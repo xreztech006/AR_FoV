@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="andresjukhus" size="0.101600 0.101600" />
+    <ImageTarget name="mustashfaa" size="0.076200 0.076200" />
     <ImageTarget name="RedLines" size="0.050800 0.050800" />
     <ImageTarget name="BlueBall" size="0.050800 0.050800" />
     <ImageTarget name="garbledigook" size="0.031750 0.031750" />

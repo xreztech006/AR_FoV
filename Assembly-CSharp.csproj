@@ -79,15 +79,15 @@
     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineVertexData.cs" />
     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\_LineStripShader.cginc" />
     <None Include="Assets\StreamingAssets\Vuforia\target_images.xml" />
+    <None Include="Assets\StreamingAssets\Vuforia\Robot.xml" />
     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAlphaBlended.shader" />
-    <None Include="Assets\StreamingAssets\Vuforia\Robot_OT.xml" />
     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-TextureAdditive.shader" />
     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\_SingleLineShader.cginc" />
     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAdditive.shader" />
+    <None Include="Assets\StreamingAssets\Vuforia\Robot_OT.xml" />
     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-TextureAlphaBlended.shader" />
     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-LightSaber.shader" />
     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-LightSaber.shader" />
-    <None Include="Assets\StreamingAssets\Vuforia\Robot.xml" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.22f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
