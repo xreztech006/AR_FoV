@@ -1,4 +1,9 @@
-﻿// HDH 6/2021
+﻿//==========================================
+// Title:  AROnlyCameraManager
+// Author: HDH : MH
+// Date:   24 Jun 2021
+//==========================================
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +11,12 @@ using UnityEngine.EventSystems;
 
 public class AROnlyCameraManager : MonoBehaviour
 {
-	//public RenderTexture _active;
+	
 	[Tooltip("Make sure 0 is the bot, and 1-3 are respective cameras")]
 	public Camera[] cameras;
+	// current and update camera
 	private Camera cam, _cam;
-    // Start is called before the first frame update
+    
     void Start()
     {
         foreach (Camera cam in cameras){
@@ -22,12 +28,7 @@ public class AROnlyCameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (_cam != cam)
-		{
-			_cam.enabled = true;
-			cam.enabled = false;
-			cam = _cam;
-		}
+		// check for touches, if it is a camera sphere, set the update cam var to the right camera
 		foreach (Touch touch in Input.touches)
 		{
 			Ray ray = Camera.main.ScreenPointToRay(touch.position);
@@ -57,8 +58,16 @@ public class AROnlyCameraManager : MonoBehaviour
 				}
 			}
 		}
+		//if it changed, switch to that camera (this works with the menu function as well)
+		if (_cam != cam)
+		{
+			_cam.enabled = true;
+			cam.enabled = false;
+			cam = _cam;
+		}
 	}
 
+	//the UI uses this script to change the update cam variable to be caught in the update loop
 	public void setCam(int num)
 	{
 		_cam = cameras[num];

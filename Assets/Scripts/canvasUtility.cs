@@ -1,44 +1,49 @@
-﻿using System.Collections;
+﻿//==========================================
+// Title:  canvasUtility
+// Author: HDH
+// Date:   24 Jun 2021
+//==========================================
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class canvasUtility : MonoBehaviour
 {
+    [Tooltip("Match the name to the UI element")]
     public GameObject modeText, modeButton, FoVButton, CountText, Cams, SpreadSlider, CountSlider;
+    // triad of rectangles to set the main camera to show the FoV camera underneath 
     private Rect a, b, _cur;
+    // holder var for the main camera
     private Camera cam;
+    [Tooltip("the actual text component within the modeText object")]
     public Text text;
+    // triad of text for the two modes (laserscan and fov repectively)
     string _text, ls, fv;
+    // cinch point:: maintains the initial state of the ARCameras masks for easy adjusting
+    // the good functionality of this script requires that the Fov and laserscan layers be disabled on the AR camera by default
     int _mask;
     bool uiActive = true;
 
-    // Start is called before the first frame update
     void Start()
     {
-        a = new Rect(0, 0, 1f, 1f);
-        b = new Rect(0.5f, 0, 1f, 1f);
+        a = new Rect(0, 0, 1f, 1f); //  the whole screen
+        b = new Rect(0.5f, 0, 1f, 1f);  // the right half of the screen
         cam = Camera.main;
-        _mask = cam.cullingMask;
-        _cur = cam.rect = a;
-        text.text = _text = fv = "Field of View";
-        ls = "Laser Scan";
-        toggleMode("fov");
+        _mask = cam.cullingMask; // hold the cameras default mask
+        _cur = cam.rect = a; // set the whole screen
+        text.text = _text = fv = "Field of View"; // default to FOV on load arbitrary
+        ls = "Laser Scan"; // cont
+        toggleMode("fov");  // cont
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // the function which en/disables the whole UI, uses _text to test mode so as not to turn on the wrong buttons
     public void toggleUI()
     {
         uiActive = !uiActive;
+        // use a string we need anyway to track the mode
         bool fov = _text == fv; //attention, equals here because we are returning
-        /*foreach (GameObject item in hideItems)
-        {
-            item.SetActive(uiActive);
-        }*/
+        
         modeText.SetActive(uiActive);
         modeButton.SetActive(uiActive);
         FoVButton.SetActive(uiActive);
@@ -47,21 +52,24 @@ public class canvasUtility : MonoBehaviour
         SpreadSlider.SetActive(!fov && uiActive ? true : false);
         CountSlider.SetActive(!fov && uiActive ? true : false);
     }
-
+    // splits the screen to show current fov camera
     public void showFoV()
     {
         cam.rect = (_cur == a ? b : a);
         _cur = cam.rect;
     }
-    //the good functionality of this script requires that the Fov and laserscan layers be disabled on the AR camera by default
+    // changes the layermask to hide objects depending on the mode
+    // the good functionality of this script requires that the Fov and laserscan layers be disabled on the AR camera by default
     void toggleMode(string name)
     {
         int mask = _mask;
         mask ^= 1 << LayerMask.NameToLayer(name);
         cam.cullingMask = mask;
     }
+    // handles UI elements for mode switching : shell togglemode
     public void switchModes()
     {
+        // use a string we need anyway to track the mode
         bool fov = _text != fv; //attention, NOT equals here because we are switching
         text.text = fov ? fv : ls;
         _text = text.text;
