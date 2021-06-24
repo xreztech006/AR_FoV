@@ -1698,6 +1698,7 @@ GameObject:
   - component: {fileID: 298673385}
   - component: {fileID: 298673384}
   - component: {fileID: 298673383}
+  - component: {fileID: 298673388}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: MainCamera
@@ -1796,16 +1797,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &302724743
+--- !u!114 &298673388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298673382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
+--- !u!21 &324106107
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'RedLinesMaterial
+  m_Name: 'andresjukhusMaterial
 
-    46836'
+    18484'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1818,7 +1835,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4e2447735ef743b2b605010a77642ed7, type: 3}
+        m_Texture: {fileID: 2800000, guid: a76817e350384cbc8f83844273b23585, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -2157,16 +2174,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479364014}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.32487488, y: 0.5191, z: -0.824}
-  m_LocalScale: {x: 2.54, y: 2.54, z: 2.54}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 9.908554, y: 24.247145, z: -35.570084}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 453985475}
   - {fileID: 1605764817322677483}
   - {fileID: 1572225708}
   - {fileID: 2072978587}
-  m_Father: {fileID: 543450652976184585}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &483412276
 GameObject:
@@ -2191,15 +2208,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483412276}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.3242, y: 0.51909995, z: -0.0555}
-  m_LocalScale: {x: 2.54, y: 2.54, z: 2.54}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 9.935124, y: 24.247143, z: -5.3141804}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 1605764816036654263}
   - {fileID: 1493749471}
   - {fileID: 1874951546}
-  m_Father: {fileID: 543450652976184585}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &516771411
 GameObject:
@@ -2378,7 +2395,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1770601400}
+  - {fileID: 2000932364}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2674,7 +2691,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1056958332}
+  - {fileID: 1663679186}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2789,7 +2806,7 @@ Transform:
   m_LocalScale: {x: 2.54, y: 2.54, z: 2.54}
   m_Children: []
   m_Father: {fileID: 543450652976184585}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &535397878
 MonoBehaviour:
@@ -3554,6 +3571,7 @@ Transform:
   - {fileID: 2962170054176779720}
   - {fileID: 2193881252779824678}
   - {fileID: 622752129497177}
+  - {fileID: 1519626255}
   m_Father: {fileID: 543450652976184585}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3971,7 +3989,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1670697480}
+  - {fileID: 1760974360}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4877,62 +4895,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046193705}
   m_CullTransparentMesh: 0
---- !u!21 &1056958332
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'BigOleHospitalMaterial
-
-    46314'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6ff2c4dcf8024508aeed316f58b90994, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
---- !u!21 &1069250585
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'andresjukhusMaterial
-
-    46580'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a76817e350384cbc8f83844273b23585, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &1080478924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5360,7 +5322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1645167439}
+  - {fileID: 1797706851}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5494,7 +5456,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1069250585}
+  - {fileID: 324106107}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6233,6 +6195,99 @@ Transform:
   m_Father: {fileID: 483412278}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1519626254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1519626255}
+  - component: {fileID: 1519626258}
+  - component: {fileID: 1519626257}
+  - component: {fileID: 1519626256}
+  m_Layer: 8
+  m_Name: MidRom1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1519626255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519626254}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.258064, z: -1.161288}
+  m_LocalScale: {x: 0.25, y: 8, z: 12}
+  m_Children: []
+  m_Father: {fileID: 757942285}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1519626256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519626254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.064516, y: 0.064516, z: 0.064515986}
+  m_Center: {x: 0, y: -0.0000000037252903, z: -0.0000000037252903}
+--- !u!23 &1519626257
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519626254}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6776fff85eefd244d96c1a63a6d055aa, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1519626258
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519626254}
+  m_Mesh: {fileID: 4461244410367245108, guid: 6b9be13ef24e40d4d821b2cc576ad5da, type: 3}
 --- !u!1 &1530905618
 GameObject:
   m_ObjectHideFlags: 0
@@ -6564,16 +6619,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641942231}
   m_CullTransparentMesh: 0
---- !u!21 &1645167439
+--- !u!21 &1650153354
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'mustashfaaMaterial
+  m_Name: 'RedLinesMaterial
 
-    46566'
+    18742'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -6586,7 +6641,35 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9863015018ca486490afcde46daea78d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4e2447735ef743b2b605010a77642ed7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+--- !u!21 &1663679186
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'BigOleHospitalMaterial
+
+    18200'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6ff2c4dcf8024508aeed316f58b90994, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -6670,34 +6753,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670579321}
   m_CullTransparentMesh: 0
---- !u!21 &1670697480
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'BlueBallMaterial
-
-    46424'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 93b2ac89454a487dbe9ab186c948f803, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &1672819102
 GameObject:
   m_ObjectHideFlags: 0
@@ -7044,16 +7099,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743890868}
   m_CullTransparentMesh: 0
---- !u!21 &1770601400
+--- !u!21 &1760974360
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'Camera_1Material
+  m_Name: 'BlueBallMaterial
 
-    46298'
+    18328'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -7066,7 +7121,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 69ace720149e469d8894c8b535125530, type: 3}
+        m_Texture: {fileID: 2800000, guid: 93b2ac89454a487dbe9ab186c948f803, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -7287,6 +7342,34 @@ MonoBehaviour:
   target: {fileID: 742989501}
   count: {fileID: 584528467}
   setAngle: {fileID: 53879348}
+--- !u!21 &1797706851
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'mustashfaaMaterial
+
+    18470'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 9863015018ca486490afcde46daea78d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!114 &1829288420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7649,7 +7732,13 @@ MonoBehaviour:
   - {fileID: 954278019}
   - {fileID: 53879346}
   - {fileID: 584528465}
-  button: {fileID: 1782310251}
+  modeText: {fileID: 2074773997}
+  modeButton: {fileID: 717857703}
+  FoVButton: {fileID: 1782310251}
+  CountText: {fileID: 745793288}
+  Cams: {fileID: 954278019}
+  SpreadSlider: {fileID: 53879346}
+  CountSlider: {fileID: 584528465}
   text: {fileID: 2074773999}
 --- !u!1 &1918018993
 GameObject:
@@ -7956,6 +8045,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &2000932364
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Camera_1Material
+
+    18170'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 69ace720149e469d8894c8b535125530, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &2011177864
 GameObject:
   m_ObjectHideFlags: 0
@@ -8081,7 +8198,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 302724743}
+  - {fileID: 1650153354}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8213,9 +8330,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052214660}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.326, y: 0.5195, z: 0.445}
-  m_LocalScale: {x: 2.54, y: 2.54, z: 2.54}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 9.864258, y: 24.262894, z: 14.390545}
+  m_LocalScale: {x: 100.00002, y: 100, z: 100.00002}
   m_Children:
   - {fileID: 1605764816755997340}
   - {fileID: 1463132832}
@@ -8223,8 +8340,8 @@ Transform:
   - {fileID: 1152896032}
   - {fileID: 1080478925}
   - {fileID: 348752871}
-  m_Father: {fileID: 543450652976184585}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &2072978586
 GameObject:
@@ -8688,9 +8805,6 @@ Transform:
   - {fileID: 525026965}
   - {fileID: 883995952}
   - {fileID: 2047618061}
-  - {fileID: 2052214662}
-  - {fileID: 483412278}
-  - {fileID: 479364016}
   - {fileID: 2593318248938712574}
   - {fileID: 8641231185239829390}
   - {fileID: 535397877}
@@ -9614,7 +9728,7 @@ Transform:
   m_LocalScale: {x: 0.019873593, y: 0.4318, z: 0.18796004}
   m_Children: []
   m_Father: {fileID: 543450652976184585}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!33 &2593318248938712575
 MeshFilter:
@@ -10497,8 +10611,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5678417077365879556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.258064, z: -1.161288}
-  m_LocalScale: {x: 0.25, y: 8, z: 12}
+  m_LocalPosition: {x: 0.387096, y: 0.0977, z: -0.1935479}
+  m_LocalScale: {x: 0.25, y: 3, z: 3.3484383}
   m_Children: []
   m_Father: {fileID: 757942285}
   m_RootOrder: 0
@@ -10568,7 +10682,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5650526492999649590, guid: 6b9be13ef24e40d4d821b2cc576ad5da, type: 3}
+  - {fileID: 2100000, guid: 10305bed0a05fb340896f75694365818, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11454,7 +11568,7 @@ Transform:
   m_LocalScale: {x: 0.019873593, y: 0.4318, z: 0.18796004}
   m_Children: []
   m_Father: {fileID: 543450652976184585}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -44.979004, y: 90.00001, z: 90.00001}
 --- !u!1 &8641231185239829391
 GameObject:

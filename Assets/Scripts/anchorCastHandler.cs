@@ -30,7 +30,9 @@ public class anchorCastHandler : MonoBehaviour
 		else vessel.transform.position = new Vector3(this.transform.position.x,
 													defaultHeight,
 													this.transform.position.z);
-		vessel.transform.rotation = this.transform.rotation;
+
+		var _angle = this.transform.rotation.eulerAngles.y;
+		vessel.transform.rotation = Quaternion.Euler(0, _angle, 0);
 
 	}
 }
