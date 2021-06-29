@@ -24,6 +24,7 @@ public class LaserScan : MonoBehaviour
 	// combo slider/values to give users access to laser count and angle values
 	public Slider count;
 	public Slider setAngle;
+	public UnityEngine.UI.Extensions.UILineRenderer graphRenderer;
 	private int numberLines;
 	private float angle;
 	// menu adjustable defaults removed for now, left if needed
@@ -75,8 +76,8 @@ public class LaserScan : MonoBehaviour
 		// Bit shift the index of the layer (8) to get a bit mask
 		int layerMask = 1 << LayerMask.NameToLayer("walls") ;
 
-        // This would cast rays only against colliders in layer 8.
-		
+		// This would cast rays only against colliders in layer 8.
+		float[] hitDistances = new float[numberLines];
 		// angles only work because 0 is in the center, and we move from the positive halfway point to the negative for symmetry
 		float currangle = angle/2;
         float angleincrement = angle / (numberLines);
@@ -92,7 +93,7 @@ public class LaserScan : MonoBehaviour
 				// construct a line in real space from the laserscanner to the hit point
 				Vector3[] positions = new Vector3[]{startsPunkt, hit.point};
 				lineRenderer.SetPositions(positions);
-
+				hitDistances[i] = hit.distance;
 				//Debug.Log(hit.distance);
 				//Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 				//Debug.Log("Did Hit");
@@ -134,6 +135,7 @@ public class LaserScan : MonoBehaviour
 			Vector3[] positions = new Vector3[] { startsPunkt, startsPunkt };
 			lineRenderer.SetPositions(positions);
 		}
+		setGraph(hitDistances);
     }
 	//message functions for sliders
 	public void SetAngle()
@@ -143,5 +145,23 @@ public class LaserScan : MonoBehaviour
 	public void setNum()
 	{
 		upCount = true;
+	}
+	private void setGraph(float[] distances)
+	{
+		Vector2[] pointList = new Vector2[numberLines*3 + 2];
+		int line = 0;
+		float increment = 1.0f/ numberLines;
+		foreach(float dist in distances)
+		{
+			float relDist = dist / 50;
+			if (relDist > 1) relDist = 1;
+			int i = line * 3;
+			pointList[i] = pointList[i+2] = new Vector2(line*increment, 0);
+			pointList[i + 1] = new Vector2((line) * increment, relDist);
+			line++;
+		}
+		pointList[numberLines * 3] = new Vector2(1, 0);
+		pointList[numberLines * 3 + 1] = new Vector2(0, 0);
+		graphRenderer.Points = pointList;
 	}
 }

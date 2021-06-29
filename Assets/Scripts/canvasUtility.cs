@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class canvasUtility : MonoBehaviour
 {
     [Tooltip("Match the name to the UI element")]
-    public GameObject modeText, modeButton, FoVButton, CountText, Cams, SpreadSlider, CountSlider;
+    public GameObject modeText, modeButton, FoVButton, CountText, Cams, SpreadSlider, CountSlider, LinePanel;
     // triad of rectangles to set the main camera to show the FoV camera underneath 
     private Rect a, b, _cur;
     // holder var for the main camera
@@ -51,6 +51,7 @@ public class canvasUtility : MonoBehaviour
         Cams.SetActive(fov && uiActive ? true : false);
         SpreadSlider.SetActive(!fov && uiActive ? true : false);
         CountSlider.SetActive(!fov && uiActive ? true : false);
+        //LinePanel.SetActive(!fov && uiActive ? true : false);
     }
     // splits the screen to show current fov camera
     public void showFoV()
@@ -79,5 +80,6 @@ public class canvasUtility : MonoBehaviour
         Cams.SetActive(fov ? true : false);
         SpreadSlider.SetActive(!fov ? true : false);
         CountSlider.SetActive(!fov ? true : false);
+        LinePanel.SetActive(!fov ? true : false);
     }
 }
