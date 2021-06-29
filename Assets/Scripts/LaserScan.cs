@@ -24,7 +24,7 @@ public class LaserScan : MonoBehaviour
 	// combo slider/values to give users access to laser count and angle values
 	public Slider count;
 	public Slider setAngle;
-	public UnityEngine.UI.Extensions.UILineRenderer graphRenderer;
+	public UnityEngine.UI.Extensions.UILineRenderer graphRenderer, greenOneRenderer;
 	private int numberLines;
 	private float angle;
 	// menu adjustable defaults removed for now, left if needed
@@ -34,6 +34,8 @@ public class LaserScan : MonoBehaviour
 	private float defaultAngle = 230.0f;
 	private GameObject[] lines;
 	bool upCount, upAngle, lateStart = false;
+	public Material green, red;
+	int greenOne;
 
 	void Start()
 	{
@@ -51,6 +53,8 @@ public class LaserScan : MonoBehaviour
 			lines[i] = Instantiate(linePrefab);
 			lines[i].transform.parent = this.transform;
 		}
+		greenOne = numberLines / 3 + 1;
+		lines[greenOne].GetComponent<LineRenderer>().material = green;
 	}
     void FixedUpdate()
     {
@@ -71,6 +75,9 @@ public class LaserScan : MonoBehaviour
 		{
 			numberLines = (int)count.value;
 			upCount = false;
+			lines[greenOne].GetComponent<LineRenderer>().material = red;
+			greenOne = numberLines / 3  +  1;
+			lines[greenOne].GetComponent<LineRenderer>().material = green;
 		}
 
 		// Bit shift the index of the layer (8) to get a bit mask
@@ -79,7 +86,7 @@ public class LaserScan : MonoBehaviour
 		// This would cast rays only against colliders in layer 8.
 		float[] hitDistances = new float[numberLines];
 		// angles only work because 0 is in the center, and we move from the positive halfway point to the negative for symmetry
-		float currangle = angle/2;
+		float currangle = numberLines >1 ? numberLines > 2 ? angle/2 : 45f: 0f;
         float angleincrement = angle / (numberLines);
 		for (int i =0; i < numberLines; i++) {
 			var lineRenderer = lines[i].GetComponent<LineRenderer>();
@@ -158,6 +165,10 @@ public class LaserScan : MonoBehaviour
 			int i = line * 3;
 			pointList[i] = pointList[i+2] = new Vector2(line*increment, 0);
 			pointList[i + 1] = new Vector2((line) * increment, relDist);
+			if(line == greenOne)
+			{
+				greenOneRenderer.Points = new Vector2[] { new Vector2(line * increment, 0), new Vector2((line * increment), relDist) };
+			}
 			line++;
 		}
 		pointList[numberLines * 3] = new Vector2(1, 0);
