@@ -25,7 +25,7 @@ public class anchorCastHandler : MonoBehaviour
 		
 		RaycastHit hit;
 		// Does the ray intersect any objects excluding the player layer
-		if (Physics.Raycast(startsPunkt, direction, out hit, Mathf.Infinity, LayerMask.NameToLayer(layerName)))
+		if (Physics.Raycast(startsPunkt, direction, out hit, Mathf.Infinity,  1 >> LayerMask.NameToLayer(layerName)))
 		{
 
 			vessel.transform.position = hit.point; //--put the vessel object at the place the raycast hits
