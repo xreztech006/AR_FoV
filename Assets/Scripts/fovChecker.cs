@@ -39,7 +39,10 @@ public class fovChecker : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        for (int i = 0; i < 3; i++)
+        {
+            if (seen[i] > 0 && wallCheckCast(frustums[i].transform.parent.gameObject)) seen[i] = 0;
+        }
         count = seen[0] + seen[1] + seen[2];
         _text.text = "The robot is visible\nby " + count.ToString() + " cameras.";
         for (int i = 0; i < 4; i++)
@@ -79,5 +82,21 @@ public class fovChecker : MonoBehaviour
                 seen[i] = 0;
             }
         }
+    }
+    bool wallCheckCast(GameObject frustum)
+    {
+        Vector3 _frustum = frustum.transform.position;
+        Vector3 direction = _frustum - this.transform.position ;
+        int layerMask = 1 << LayerMask.NameToLayer("walls");
+        //layerMask    |= 1 << LayerMask.NameToLayer("_frustum");
+        //layerMask = ~layerMask;
+        RaycastHit hit;
+        // return Physics.Raycast(this.transform.position, direction, out hit, direction.magnitude, layerMask) ? false : true;
+        if (Physics.Raycast(this.transform.position, direction, out hit, direction.magnitude, layerMask))
+        {
+            return hit.distance != direction.magnitude ? true : false;
+        }
+        else return false;
+
     }
 }

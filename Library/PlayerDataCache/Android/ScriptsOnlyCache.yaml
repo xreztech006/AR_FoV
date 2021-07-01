@@ -26,11 +26,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     Vuforia.UnityExtensions.dll:
-    - Vuforia.AnchorInputListenerBehaviour
-    - Vuforia.ContentPositioningBehaviour
     - Vuforia.ImageTargetBehaviour
     - Vuforia.ObjectTargetBehaviour
-    - Vuforia.PlaneFinderBehaviour
     - Vuforia.TurnOffBehaviour
     - Vuforia.VuforiaBehaviour
     - Vuforia.VuforiaConfiguration
@@ -88,15 +85,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11764}
     - Class: 114
-      Script: {instanceID: 11876}
-    - Class: 114
-      Script: {instanceID: 11890}
-    - Class: 114
       Script: {instanceID: 11912}
     - Class: 114
       Script: {instanceID: 11930}
-    - Class: 114
-      Script: {instanceID: 11932}
     - Class: 114
       Script: {instanceID: 11954}
     - Class: 114
@@ -128,11 +119,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14122}
     - Class: 114
-      Script: {instanceID: 15866}
+      Script: {instanceID: 15950}
     - Class: 114
-      Script: {instanceID: 15884}
+      Script: {instanceID: 15972}
     - Class: 114
-      Script: {instanceID: 15908}
+      Script: {instanceID: 15996}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -248,7 +239,7 @@ ScriptsOnlyBuild:
     className: UILinearDodgeEffect
   - hash:
       serializedVersion: 2
-      Hash: 4f37b436030a0f51665f5d958d4cf074
+      Hash: 681a186f50ae0e827bc7a5534fd9edbb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LaserScan
@@ -848,7 +839,7 @@ ScriptsOnlyBuild:
     className: CardExpanding2D
   - hash:
       serializedVersion: 2
-      Hash: 663aa89650fb70a4b93440f28500fb4f
+      Hash: d46b1035f452c5a816894cd4823e6bcf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: canvasUtility
@@ -2823,4 +2814,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/HospitalAR.unity
-  playerPath: C:/Users/xreztech009/Desktop/Hospital_AR_GPT.apk
+  playerPath: C:/Users/xreztech009/Desktop/Hospital_AR.apk

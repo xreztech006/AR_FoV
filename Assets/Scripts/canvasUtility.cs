@@ -25,8 +25,11 @@ public class canvasUtility : MonoBehaviour
     // the good functionality of this script requires that the Fov and laserscan layers be disabled on the AR camera by default
     int _mask;
     bool uiActive, _inverted = true;
-    public GameObject[] oest, vest;
-    float east, west;
+    [Tooltip("0:O1, 1:V1, 2:V2, 3:O2, 4:OS, 5:VS")]
+    public GameObject[] walls;
+    Vector3[] _tw;
+    float[] _rw;
+    int _wallMod = 1;
 
     void Start()
     {
@@ -38,8 +41,13 @@ public class canvasUtility : MonoBehaviour
         text.text = _text = fv = "Field of View"; // default to FOV on load arbitrary
         ls = "Laser Scan"; // cont
         toggleMode("fov");  // cont
-        east = oest[0].transform.position.x;
-        west = vest[0].transform.position.x;
+        _tw = new Vector3[4];
+        _rw = new float[4];
+        for (int i = 0; i < 4; i++)
+        {
+            _tw[i] = walls[i].transform.position;
+            _rw[i] = walls[i].transform.rotation.eulerAngles.y;
+        }
     }
     // the function which en/disables the whole UI, uses _text to test mode so as not to turn on the wrong buttons
     public void toggleUI()
@@ -90,7 +98,7 @@ public class canvasUtility : MonoBehaviour
     }
     public void flipHospital()
     {
-        
+        /*
         foreach (GameObject wall in oest)
         {
             var p = wall.transform.position;
@@ -103,7 +111,22 @@ public class canvasUtility : MonoBehaviour
             wall.transform.position = new Vector3(_inverted ? east : west, p.y, p.z);
             wall.transform.Rotate(0, 180, 0);
         }
-        _inverted = !_inverted;
+        _inverted = !_inverted;*/
+        for (int i = 0; i < 4; i++)
+        {
+            walls[i].transform.position = _tw[(i + _wallMod)%4] ;
+            walls[i].transform.rotation = Quaternion.Euler(0, _rw[(i + _wallMod) % 4], 0);
+        }
+        var p = walls[5].transform.position;
+        walls[4].transform.position = new Vector3(_inverted ? _tw[2].x : _tw[0].x, p.y, p.z);
+        walls[5].transform.position = new Vector3(_inverted ? _tw[0].x : _tw[2].x, p.y, p.z);
+        _wallMod++;
+        if(_wallMod > 4)
+        {
+            _wallMod = 0;
+            _inverted = !_inverted;
+        }
+
     }
     public void toggleGraph()
     {

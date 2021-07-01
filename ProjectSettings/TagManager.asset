@@ -22,7 +22,7 @@ TagManager:
   - fov
   - botAnchor
   - cameraAnchor
-  - 
+  - _frustum
   - 
   - 
   - 
