@@ -29,34 +29,32 @@ public class AROnlyCameraManager : MonoBehaviour
     void Update()
     {
 		// check for touches, if it is a camera sphere, set the update cam var to the right camera
-		foreach (Touch touch in Input.touches)
+		// foreach (Touch touch in Input.touches)
+		if(Input.GetMouseButtonDown(0))
 		{
-			Ray ray = Camera.main.ScreenPointToRay(touch.position);
-
-			if (touch.phase == TouchPhase.Began)
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit = new RaycastHit();
+			if (Physics.Raycast(ray, out hit, Mathf.Infinity, (1 << LayerMask.NameToLayer("fov"))))
 			{
-				RaycastHit hit = new RaycastHit();
-				if (Physics.Raycast(ray, out hit, 1000, LayerMask.NameToLayer("fov")))
+				Debug.Log("touched " + hit.collider.name);
+				switch (hit.collider.name)
 				{
-					Debug.Log("touched " + hit.transform.name);
-					switch (hit.transform.name)
-					{
-						case "Camera1":
-							_cam = cameras[1];
-							break;
-						case "Camera2":
-							_cam = cameras[2];
-							break;
-						case "Camera3":
-							_cam = cameras[3];
-							break;
-						case "RobotTargetCylinder":
-							_cam = cameras[0];
-							break;
-					}
-
+					case "Camera1":
+						_cam = cameras[1];
+						break;
+					case "Camera2":
+						_cam = cameras[2];
+						break;
+					case "Camera3":
+						_cam = cameras[3];
+						break;
+					case "Camera0":
+						_cam = cameras[0];
+						break;
 				}
+
 			}
+			
 		}
 		//if it changed, switch to that camera (this works with the menu function as well)
 		if (_cam != cam)
@@ -72,5 +70,5 @@ public class AROnlyCameraManager : MonoBehaviour
 	{
 		_cam = cameras[num];
 	}
-
+	
 }

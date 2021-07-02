@@ -121,7 +121,7 @@ public class canvasUtility : MonoBehaviour
         walls[4].transform.position = new Vector3(_inverted ? _tw[2].x : _tw[0].x, p.y, p.z);
         walls[5].transform.position = new Vector3(_inverted ? _tw[0].x : _tw[2].x, p.y, p.z);
         _wallMod++;
-        if(_wallMod > 4)
+        if(_wallMod > 3)
         {
             _wallMod = 0;
             _inverted = !_inverted;
