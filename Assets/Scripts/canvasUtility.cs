@@ -34,7 +34,7 @@ public class canvasUtility : MonoBehaviour
     void Start()
     {
         a = new Rect(0, 0, 1f, 1f); //  the whole screen
-        b = new Rect(0.5f, 0, 1f, 1f);  // the right half of the screen
+        b = new Rect(0f, 0, 0.5f, 1f);  // the right half of the screen
         cam = Camera.main;
         _mask = cam.cullingMask; // hold the cameras default mask
         _cur = cam.rect = a; // set the whole screen
