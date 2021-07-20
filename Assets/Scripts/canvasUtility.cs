@@ -30,6 +30,8 @@ public class canvasUtility : MonoBehaviour
     Vector3[] _tw;
     float[] _rw;
     int _wallMod = 1;
+    public UnityEngine.UI.Extensions.UILineRenderer _border;
+    private UIBorder border;
 
     void Start()
     {
@@ -48,6 +50,8 @@ public class canvasUtility : MonoBehaviour
             _tw[i] = walls[i].transform.position;
             _rw[i] = walls[i].transform.rotation.eulerAngles.y;
         }
+        border = new UIBorder(_border);
+        border.toggleSplit();
     }
     // the function which en/disables the whole UI, uses _text to test mode so as not to turn on the wrong buttons
     public void toggleUI()
@@ -71,6 +75,7 @@ public class canvasUtility : MonoBehaviour
     {
         cam.rect = (_cur == a ? b : a);
         _cur = cam.rect;
+        border.toggleSplit();
     }
     // changes the layermask to hide objects depending on the mode
     // the good functionality of this script requires that the Fov and laserscan layers be disabled on the AR camera by default
@@ -131,5 +136,41 @@ public class canvasUtility : MonoBehaviour
     public void toggleGraph()
     {
         LinePanel.SetActive(LinePanel.activeInHierarchy ? false : true);
+        border.toggleOn();
+    }
+    class UIBorder
+    {
+        public UIBorder(UnityEngine.UI.Extensions.UILineRenderer lineRenderer)
+        {
+            this.lineRenderer = lineRenderer;
+            splitPoints = lineRenderer.Points;
+            fullPoints = new Vector2[5];
+            for(int i = 0; i < 4; i++)
+            {
+                fullPoints[i] = splitPoints[i];
+            }
+            fullPoints[4] = new Vector2(0, .02f);
+            _split = true;
+            _on = true;
+        }
+        UnityEngine.UI.Extensions.UILineRenderer lineRenderer;
+        Vector2[] splitPoints, fullPoints;
+        Vector2[] offPoints = new Vector2[2] { new Vector2(.5f, 1f), new Vector2(.5f, -6f) };
+        bool _on;
+        bool _split;
+        public void update()
+        {
+            lineRenderer.Points = _on ? _split ? splitPoints : fullPoints : _split? offPoints : null;
+        }
+        public void toggleOn()
+        {
+            _on = !_on;
+            update();
+        }
+        public void toggleSplit()
+        {
+            _split = !_split;
+            update();
+        }
     }
 }
