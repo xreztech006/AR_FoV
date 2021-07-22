@@ -200,9 +200,15 @@ public class LaserScan : MonoBehaviour
 			if(line == greenOne)
 			{
 				
-				greenOneRenderer.Points = new Vector2[] { new Vector2(line * increment + increment, 0), new Vector2((line * increment + increment), relDist) };
-			}
+					greenOneRenderer.Points = new Vector2[] { new Vector2(line * increment + increment, 0), new Vector2((line * increment + increment), relDist) };
+			
+				
+				}
 			line++;
+		}
+		if (numberLines == 0)
+		{
+			greenOneRenderer.Points = new Vector2[1];
 		}
 		// finish off by drawing the rest of the bottom (just a bit less awkward since we had to crawl the bottom for the rest of the lines as well)
 		pointList[numberLines * 3] = new Vector2(1, 0);
