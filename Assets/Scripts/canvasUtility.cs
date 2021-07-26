@@ -156,11 +156,18 @@ public class canvasUtility : MonoBehaviour
         UnityEngine.UI.Extensions.UILineRenderer lineRenderer;
         Vector2[] splitPoints, fullPoints;
         Vector2[] offPoints = new Vector2[2] { new Vector2(.5f, 1f), new Vector2(.5f, -6f) };
+        Vector2[] noPoints = new Vector2[2] { new Vector2(-6f, 1f), new Vector2(6f, 1f) };
         bool _on;
         bool _split;
         public void update()
         {
-            lineRenderer.Points = _on ? _split ? splitPoints : fullPoints : _split? offPoints : null;
+            lineRenderer.Points = _on ?
+                                    _split ?
+                                        splitPoints 
+                                    : fullPoints
+                                  : _split ? 
+                                    offPoints 
+                                  : noPoints;
         }
         public void toggleOn()
         {
