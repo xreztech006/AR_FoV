@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class canvasUtility : MonoBehaviour
 {
     [Tooltip("Match the name to the UI element")]
-    public GameObject modeText, modeButton, FoVButton, CountText, Cams, SpreadSlider, CountSlider, LinePanel, flipButton;
+    public GameObject modeText, modeButton, FoVButton, CountText, Cams, SpreadSlider, CountSlider, LinePanel, flipButton, obsButton;
     // triad of rectangles to set the main camera to show the FoV camera underneath 
     private Rect a, b, _cur;
     // holder var for the main camera
@@ -68,6 +68,7 @@ public class canvasUtility : MonoBehaviour
         SpreadSlider.SetActive(!fov && uiActive ? true : false);
         CountSlider.SetActive(!fov && uiActive ? true : false);
         flipButton.SetActive(!fov && uiActive ? true : false);
+        obsButton.SetActive(!fov && uiActive ? true : false);
         //LinePanel.SetActive(!fov && uiActive ? true : false);
     }
     // splits the screen to show current fov camera
@@ -100,6 +101,7 @@ public class canvasUtility : MonoBehaviour
         CountSlider.SetActive(!fov ? true : false);
         //LinePanel.SetActive(!fov ? true : false);
         flipButton.SetActive(!fov ? true : false);
+        obsButton.SetActive(!fov ? true : false);
     }
     public void flipHospital()
     {
