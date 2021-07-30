@@ -140,8 +140,21 @@ public class canvasUtility : MonoBehaviour
         LinePanel.SetActive(LinePanel.activeInHierarchy ? false : true);
         border.toggleOn();
     }
+    /// <summary>
+    /// This class handles the border. There are 4 setups the border can take, given the two parameters screen-split, and graph-on
+    /// The toggles work as messages for the canvasUI to broadcast, and update is called whenever something changes to bring up the right border
+    /// </summary>
+    //       |  ON   |  OFF  | < Graph
+    //       |=======|=======|
+    // Full  | full  |   no  |
+    //       |=======|=======|
+    // Split | split |  off  |
+    //       |=======|=======|
+    // ^Screen
     class UIBorder
     {
+        //This constructor looks over-the-top, but all it is doing is saving the default points as split+on mode, 
+        // and then creating full+on by removing the stem down the middle from that point-list manually
         public UIBorder(UnityEngine.UI.Extensions.UILineRenderer lineRenderer)
         {
             this.lineRenderer = lineRenderer;
@@ -157,6 +170,7 @@ public class canvasUtility : MonoBehaviour
         }
         UnityEngine.UI.Extensions.UILineRenderer lineRenderer;
         Vector2[] splitPoints, fullPoints;
+        // these two modes are simple enough to not need the constructor
         Vector2[] offPoints = new Vector2[2] { new Vector2(.5f, 1f), new Vector2(.5f, -6f) };
         Vector2[] noPoints = new Vector2[2] { new Vector2(-6f, 1f), new Vector2(6f, 1f) };
         bool _on;

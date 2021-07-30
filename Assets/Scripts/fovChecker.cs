@@ -1,7 +1,7 @@
 ﻿//==========================================
 // Title:  fovChecker
 // Author: HDH
-// Date:   24 Jun 2021
+// Date:   24 Jul 2021
 //==========================================
 
 using System.Collections;
@@ -10,11 +10,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
+/// <summary>
+/// Lives on the bot, somewhere. checks when the bot (this script's object itself) is within 
+///  camera view frustrums, and whether or not line of sight is blocked, then displays that info
+///  in both the text on the UI and by enabling the proper ring object beneath the bot
+/// </summary>
 public class fovChecker : MonoBehaviour
 {
     [Tooltip("0: Blue, 1: Green, 2: Yellow, 3: Red")]
     public Material[] materials;
-    [Tooltip("0: Yellow, 1: Blue, 2: Red (not as imposrtant as the colours)")]
+    [Tooltip("0: Yellow, 1: Blue, 2: Red (not as imposrtant as the ring colours)")]
     public Collider[] frustums;
     // we will only need to turn the rings on and off, no need to keep more than the renderers
     private Renderer[] _rings;
@@ -24,6 +29,7 @@ public class fovChecker : MonoBehaviour
     // text to display count on
     public Text _text;
 
+    //start creates an array of renderers and ints
     void Start()
     {
         // rings have a script on them which is just a named class with a public int called myVal
@@ -39,12 +45,19 @@ public class fovChecker : MonoBehaviour
 
     void FixedUpdate()
     {
+        //given all collision which are noted from the trigger message-handlers, make sure they have line of sight
         for (int i = 0; i < 3; i++)
         {
             if (seen[i] > 0 && wallCheckCast(frustums[i].transform.parent.gameObject)) seen[i] = 0;
         }
+
+        //now that we are sure which are actually seen, get a count
         count = seen[0] + seen[1] + seen[2];
+
+        //update the text
         _text.text = "The robot is visible\nby " + count.ToString() + " cameras.";
+
+        //and then the rings
         for (int i = 0; i < 4; i++)
         {
             // only the ring with the matching count should be on
@@ -83,6 +96,11 @@ public class fovChecker : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// This function checks to make sure that line of sight for a given camera (by it's frustum) is not blocked by a wall
+    /// </summary>
+    /// <param name="frustum"></param>
+    /// <returns></returns>
     bool wallCheckCast(GameObject frustum)
     {
         Vector3 _frustum = frustum.transform.position;

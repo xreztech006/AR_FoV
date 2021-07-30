@@ -112,16 +112,16 @@ public class LaserScan : MonoBehaviour
 				//Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 				//Debug.Log("Did Hit");
 
-				//=======WIP=======HDH=======Refraction test
+				
 				if (hit.collider.gameObject.name == "TranslucentDoorCollider")
 				{
 					//Random.seed = (int)(hit.point.x + hit.point.y + hit.point.z);
 					float val = randList[i];
+					// override point if translucent collided
 					_point = startsPunkt + (direction * linedistance) * val;
-
+					// mark the distance as translucent using negative numbers, for the graphs sake
 					hitDistances[i] *= -1;
 				}
-				//=======WIP=======HDH=======
 
 				Vector3[] positions = new Vector3[] { startsPunkt, _point};
 				lineRenderer.SetPositions(positions);
@@ -183,8 +183,9 @@ public class LaserScan : MonoBehaviour
 		{
 			// >ad hoc distance scaling
 			float relDist = dist / 70;
-			
+			// we marked tranlucent collisions using negative numbers, this catches them
 			if (relDist < 0) relDist = randList[line];
+			// There is a maximum distance graphable, as determined by relDistance (ad hoc)
 			if (relDist > 1) relDist = 1;
 			// lines use three points
 			int i = line * 3;
@@ -217,6 +218,9 @@ public class LaserScan : MonoBehaviour
 		//  then graph
 		graphRenderer.Points = pointList;
 	}
+	//used by the translucent portions of the script, creates an array of 50 random numbers 
+	// within the legnth bounds of the laserscanner every quarter second
+	// read from on a line by line basis as needed 
 	IEnumerator coRandList()
 	{
 		while (true)
