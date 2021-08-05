@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HospitalAR.unity
     guid: e48da31bb518104499a5ef868cac3f7c
+  - enabled: 1
+    path: Assets/Scenes/laserscanTutorial.unity
+    guid: e9982a0df3b96d349a9ae6e605a7783a
   - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 77198313aecdc0247b289f4a06ba8d95

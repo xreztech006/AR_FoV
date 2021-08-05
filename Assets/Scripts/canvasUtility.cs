@@ -8,11 +8,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class canvasUtility : MonoBehaviour
 {
     [Tooltip("Match the name to the UI element")]
-    public GameObject modeText, modeButton, FoVButton, CountText, Cams, SpreadSlider, CountSlider, LinePanel, flipButton, obsButton;
+    public GameObject modeText, modeButton, FoVButton, CountText, Cams, SpreadSlider, CountSlider, LinePanel, flipButton, obsButton, tutorialButton;
     // triad of rectangles to set the main camera to show the FoV camera underneath 
     private Rect a, b, _cur;
     // holder var for the main camera
@@ -69,6 +70,7 @@ public class canvasUtility : MonoBehaviour
         CountSlider.SetActive(!fov && uiActive ? true : false);
         flipButton.SetActive(!fov && uiActive ? true : false);
         obsButton.SetActive(!fov && uiActive ? true : false);
+        tutorialButton.SetActive(!fov && uiActive ? true : false);
         //LinePanel.SetActive(!fov && uiActive ? true : false);
     }
     // splits the screen to show current fov camera
@@ -102,6 +104,7 @@ public class canvasUtility : MonoBehaviour
         //LinePanel.SetActive(!fov ? true : false);
         flipButton.SetActive(!fov ? true : false);
         obsButton.SetActive(!fov ? true : false);
+        tutorialButton.SetActive(!fov ? true : false);
     }
     public void flipHospital()
     {
@@ -140,6 +143,11 @@ public class canvasUtility : MonoBehaviour
         LinePanel.SetActive(LinePanel.activeInHierarchy ? false : true);
         border.toggleOn();
     }
+    public void playVideo()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     /// <summary>
     /// This class handles the border. There are 4 setups the border can take, given the two parameters screen-split, and graph-on
     /// The toggles work as messages for the canvasUI to broadcast, and update is called whenever something changes to bring up the right border
