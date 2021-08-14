@@ -15,7 +15,7 @@ public class obstacleManager : MonoBehaviour
     int numObstacles;
     int tracker;
     bool toggled;
-    
+
     /// <summary>
     /// Use Start to populate initial values. Reading from children allows the list of objcts to be arbitrary
     /// We make the toggle true at the start to ensure only one object is showing on load
@@ -28,7 +28,7 @@ public class obstacleManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Every 
+    /// Every frame, check if the obstacle button was pressed, then enable the proper obstacle if so
     /// </summary>
     void Update()
     {

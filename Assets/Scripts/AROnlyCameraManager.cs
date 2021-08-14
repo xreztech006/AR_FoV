@@ -1,6 +1,6 @@
 ﻿//==========================================
 // Title:  AROnlyCameraManager
-// Author: HDH : MH
+// Author: HDH : MH, OC
 // Date:   24 Jun 2021
 //==========================================
 
@@ -11,12 +11,12 @@ using UnityEngine.EventSystems;
 
 public class AROnlyCameraManager : MonoBehaviour
 {
-	
+
 	[Tooltip("Make sure 0 is the bot, and 1-3 are respective cameras")]
 	public Camera[] cameras;
 	// current and update camera
 	private Camera cam, _cam;
-    
+
     void Start()
     {
         foreach (Camera cam in cameras){
@@ -54,7 +54,7 @@ public class AROnlyCameraManager : MonoBehaviour
 				}
 
 			}
-			
+
 		}
 		//if it changed, switch to that camera (this works with the menu function as well)
 		if (_cam != cam)
@@ -70,5 +70,5 @@ public class AROnlyCameraManager : MonoBehaviour
 	{
 		_cam = cameras[num];
 	}
-	
+
 }
