@@ -9,6 +9,8 @@ ScriptsOnlyBuild:
     - anchorCastHandler
     - canvasUtility
     - fovChecker
+    - obstacleManager
+    - tutorialHandler
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -73,57 +75,59 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11360}
     - Class: 114
-      Script: {instanceID: 11386}
+      Script: {instanceID: 11392}
     - Class: 114
-      Script: {instanceID: 11512}
+      Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 11572}
+      Script: {instanceID: 11578}
     - Class: 114
-      Script: {instanceID: 11622}
+      Script: {instanceID: 11628}
     - Class: 114
-      Script: {instanceID: 11624}
+      Script: {instanceID: 11630}
     - Class: 114
-      Script: {instanceID: 11764}
+      Script: {instanceID: 11770}
     - Class: 114
-      Script: {instanceID: 11912}
+      Script: {instanceID: 11918}
     - Class: 114
-      Script: {instanceID: 11930}
+      Script: {instanceID: 11936}
     - Class: 114
-      Script: {instanceID: 11954}
+      Script: {instanceID: 11960}
     - Class: 114
-      Script: {instanceID: 11964}
+      Script: {instanceID: 11970}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12072}
+      Script: {instanceID: 12078}
     - Class: 114
-      Script: {instanceID: 12174}
+      Script: {instanceID: 12180}
     - Class: 114
-      Script: {instanceID: 12212}
+      Script: {instanceID: 12218}
     - Class: 114
-      Script: {instanceID: 12720}
+      Script: {instanceID: 12728}
     - Class: 114
-      Script: {instanceID: 12786}
+      Script: {instanceID: 12760}
     - Class: 114
-      Script: {instanceID: 13008}
+      Script: {instanceID: 12796}
     - Class: 114
-      Script: {instanceID: 13176}
+      Script: {instanceID: 13018}
     - Class: 114
-      Script: {instanceID: 13450}
+      Script: {instanceID: 13186}
     - Class: 114
-      Script: {instanceID: 13536}
+      Script: {instanceID: 13460}
     - Class: 114
-      Script: {instanceID: 13632}
+      Script: {instanceID: 13546}
     - Class: 114
-      Script: {instanceID: 14082}
+      Script: {instanceID: 13642}
     - Class: 114
-      Script: {instanceID: 14122}
+      Script: {instanceID: 14092}
     - Class: 114
-      Script: {instanceID: 15986}
+      Script: {instanceID: 14132}
     - Class: 114
-      Script: {instanceID: 16008}
+      Script: {instanceID: 16168}
     - Class: 114
-      Script: {instanceID: 16030}
+      Script: {instanceID: 16188}
+    - Class: 114
+      Script: {instanceID: 16222}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -145,6 +149,37 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/laserscanTutorial.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 12460}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 328
+      Script: {instanceID: 0}
+    - Class: 329
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -839,7 +874,7 @@ ScriptsOnlyBuild:
     className: CardExpanding2D
   - hash:
       serializedVersion: 2
-      Hash: d46b1035f452c5a816894cd4823e6bcf
+      Hash: 4fa4a8fe0499f9c23f85daa8a42da7cb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: canvasUtility
@@ -1211,6 +1246,12 @@ ScriptsOnlyBuild:
     className: RangeSlider
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: tutorialHandler
+  - hash:
+      serializedVersion: 2
       Hash: af596be9be034123390a8fe2b11945ef
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -1557,6 +1598,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityEngine.UI.Extensions
     className: UIPolygon
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: obstacleManager
   - hash:
       serializedVersion: 2
       Hash: 8e83d9eee35b9a9e096cc19c9528d08c
@@ -2814,4 +2861,5 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/HospitalAR.unity
+  - Assets/Scenes/laserscanTutorial.unity
   playerPath: C:/Users/xreztech009/Desktop/Hospital_AR.apk

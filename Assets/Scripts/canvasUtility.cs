@@ -1,7 +1,7 @@
 ﻿//==========================================
 // Title:  canvasUtility
 // Author: HDH
-// Date:   24 Jun 2021
+// Date:   17 Aug 2021
 //==========================================
 
 using System.Collections;
@@ -27,7 +27,9 @@ public class canvasUtility : MonoBehaviour
     int _mask;
     bool uiActive, _inverted = true;
     [Tooltip("0:O1, 1:V1, 2:V2, 3:O2, 4:OS, 5:VS")]
+    // the doors are child objects of the walls, so a list of walls suffices to move the doors
     public GameObject[] walls;
+    // use these two arrays to keep track of the default door positions/rotations
     Vector3[] _tw;
     float[] _rw;
     int _wallMod = 1;
@@ -46,6 +48,7 @@ public class canvasUtility : MonoBehaviour
         toggleMode("fov");  // cont
         _tw = new Vector3[4];
         _rw = new float[4];
+        // use these two arrays to keep track of the default door positions/rotations
         for (int i = 0; i < 4; i++)
         {
             _tw[i] = walls[i].transform.position;
@@ -104,36 +107,27 @@ public class canvasUtility : MonoBehaviour
         //LinePanel.SetActive(!fov ? true : false);
         flipButton.SetActive(!fov ? true : false);
         obsButton.SetActive(!fov ? true : false);
-        tutorialButton.SetActive(!fov ? true : false);
+        //tutorialButton.SetActive(!fov ? true : false); // there used to only be one tutorial
     }
     public void flipHospital()
     {
-        /*
-        foreach (GameObject wall in oest)
-        {
-            var p = wall.transform.position;
-            wall.transform.position = new Vector3(_inverted? west : east, p.y, p.z);
-            wall.transform.Rotate(0, 180, 0);
-        }
-        foreach (GameObject wall in vest)
-        {
-            var p = wall.transform.position;
-            wall.transform.position = new Vector3(_inverted ? east : west, p.y, p.z);
-            wall.transform.Rotate(0, 180, 0);
-        }
-        _inverted = !_inverted;*/
+
+        // the walls the doors are on get cycled using mod, which is changed below
         for (int i = 0; i < 4; i++)
         {
-            walls[i].transform.position = _tw[(i + _wallMod)%4] ;
+            walls[i].transform.position = _tw[(i + _wallMod) % 4];
             walls[i].transform.rotation = Quaternion.Euler(0, _rw[(i + _wallMod) % 4], 0);
         }
         var p = walls[5].transform.position;
+        // swap 5 and 6 if we have reset the mod - swap
+        // Just used the roation from wall 0 and 2 since they are the same and we never check the exact position and rotation of the closet walls
         walls[4].transform.position = new Vector3(_inverted ? _tw[2].x : _tw[0].x, p.y, p.z);
         walls[5].transform.position = new Vector3(_inverted ? _tw[0].x : _tw[2].x, p.y, p.z);
-        _wallMod++;
+        _wallMod++; 
         if(_wallMod > 3)
         {
             _wallMod = 0;
+            // swap 5 and 6 if we have reset the mod - check mod
             _inverted = !_inverted;
         }
 
@@ -145,7 +139,10 @@ public class canvasUtility : MonoBehaviour
     }
     public void playVideo()
     {
-        SceneManager.LoadScene(1);
+        if(_text != fv)
+            SceneManager.LoadScene(1);
+        else
+            SceneManager.LoadScene(2); // there used to only be one tutorial, but the second one is field of view
     }
 
     /// <summary>
@@ -161,7 +158,7 @@ public class canvasUtility : MonoBehaviour
     // ^Screen
     class UIBorder
     {
-        //This constructor looks over-the-top, but all it is doing is saving the default points as split+on mode, 
+        //This constructor looks extravagent, but all it is doing is saving the default points as split+on mode, 
         // and then creating full+on by removing the stem down the middle from that point-list manually
         public UIBorder(UnityEngine.UI.Extensions.UILineRenderer lineRenderer)
         {
